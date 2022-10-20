@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #f4f9ff;
+}
+
+.primary {
+  color: #1e55c0;
+}
+.list-group-item {
+  padding: 10px;
+}
+
+#btn-join {
+  background-color: #2a5dc4;
+  color: white;
+}
+#btn-join:hover {
+  background-color: #1d4dad;
+  color: white;
+}
+#btn-search {
+  background-color: #2a5dc4;
+  color: white;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+#btn-search:hover {
+  background-color: #1d4dad;
+}
+
+#search {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.text-title {
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+#btn-finish {
+  border-radius: 20px;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+}
+input[type="radio"] + label {
+  cursor: pointer;
+  border: 2px solid #1d4dad;
+  border-radius: 15px;
+  min-width: 200px;
+}
+
+input[type="radio"]:checked + label {
+  color: #14c38e;
+  border: 2px solid #14c38e;
+}
+.form-check-label .choice {
+  color: white;
+  padding: 1px 10px;
+  background-color: #1d4dad;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+input[type="radio"]:checked + .form-check-label .choice {
+  background-color: #14c38e;
+}
