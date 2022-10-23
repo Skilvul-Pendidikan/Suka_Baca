@@ -8,7 +8,10 @@ register.addEventListener("click", async (event) => {
   let confirm = document.getElementById("confirm-password").value;
 
   if (username == "" || email == "" || password == "" || confirm == "") {
-    alert("Data Tidak Ada yang Boleh Kosong");
+    Swal.fire("Gagal!", "Data Tidak Boleh Kosong!", "error");
+    setTimeout(1200);
+  } else if (password != confirm) {
+    Swal.fire("Gagal!", "Password Tidak Sesuai!", "error");
   } else {
     try {
       let res = await fetch(
@@ -31,7 +34,9 @@ register.addEventListener("click", async (event) => {
     } catch (error) {
       // console.log(error);
     }
-    alert("Sukses");
-    location.href = "index.html";
+    Swal.fire("Good Job!", "Akun Berhasil Dibuat", "success");
+    setTimeout(() => {
+      location.href = "index.html";
+    }, 1200);
   }
 });

@@ -12,7 +12,10 @@ login.addEventListener("click", async (event) => {
 
   function findUsers(data) {
     if (username == data.name && password == data.password) {
-      location.href = "quiz.html";
+      Swal.fire("Sukses!", "Berhasil Masuk", "success");
+      setTimeout(() => {
+        location.href = "text-quiz.html";
+      }, 1200);
     }
   }
 });
