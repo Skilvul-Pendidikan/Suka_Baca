@@ -1,3 +1,13 @@
+let score = 0;
+
+function preventBack() {
+  window.history.forward();
+}
+setTimeout("preventBack()", 0);
+window.onunload = function () {
+  null;
+};
+
 // timer
 function startTimer(duration, display) {
   var timer = duration,
@@ -13,7 +23,13 @@ function startTimer(duration, display) {
     display.textContent = minutes + ":" + seconds;
 
     if (--timer < 0) {
-      location.href = "text-quiz.html";
+      timer = 0;
+      Swal.fire("Sorry", "Waktu habis, jawabanmu tidak terkirim", "warning");
+      score = 0;
+      localStorage.setItem("score", score);
+      setTimeout(() => {
+        location.href = "score.html";
+      }, 900);
     }
   }, 1000);
 }
@@ -22,7 +38,6 @@ window.onload = function () {
   var minutes = 60 * 1,
     display = document.querySelector("#timer");
   startTimer(minutes, display);
-  localStorage.setItem("id", `${id}`);
 };
 // end timer
 
@@ -41,6 +56,8 @@ let getQuiz = async () => {
   btn_finsih.addEventListener("click", (event) => {
     event.preventDefault();
 
+    //score
+
     let correctAnswer = quizz.quiz.question.answerCorrect;
     const answer = document.querySelector('input[name="answer"]:checked');
     if (answer != null) {
@@ -49,18 +66,24 @@ let getQuiz = async () => {
       if (savedAnswer == correctAnswer) {
         Swal.fire("Good job!", "Jawabanmu Benar", "success");
         setTimeout(() => {
-          location.href = "text-quiz.html";
+          score = 100;
+          localStorage.setItem("score", score);
+          location.href = "score.html";
         }, 1200);
+        localStorage.setItem("score", score + 100);
         // alert("Selamat Jawaban anda Betul");
       } else {
         Swal.fire("Sorry", "Jawabanmu Kurang Tepat", "error");
         setTimeout(() => {
-          location.href = "text-quiz.html";
+          score = 0;
+          localStorage.setItem("score", score);
+          location.href = "score.html";
         }, 1200);
+        localStorage.setItem("score", score);
         // alert("Jawaban Anda Salah");
       }
     } else {
-      alert("Harap click");
+      Swal.fire("Sorry", "Harap pilih jawabanmu", "warning");
     }
   });
   quiz.innerHTML = `${quizz.quiz.question.question1}`;
