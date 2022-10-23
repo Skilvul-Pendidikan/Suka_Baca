@@ -1,3 +1,11 @@
+function preventBack() {
+  window.history.forward();
+}
+setTimeout("preventBack()", 0);
+window.onunload = function () {
+  null;
+};
+
 let id = 2;
 
 let id_literation = localStorage.getItem("id");
