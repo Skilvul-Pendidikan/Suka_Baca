@@ -14,7 +14,7 @@ login.addEventListener("click", async (event) => {
     if (username == data.name && password == data.password) {
       Swal.fire("Sukses!", "Berhasil Masuk", "success");
       setTimeout(() => {
-        location.href = "text-quiz.html";
+        location.href = "class-list.html";
       }, 1200);
     }
   }
