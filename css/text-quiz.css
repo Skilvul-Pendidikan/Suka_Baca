@@ -70,3 +70,13 @@ input[type="radio"]:checked + label {
 input[type="radio"]:checked + .form-check-label .choice {
   background-color: #14c38e;
 }
+
+#literation-list li {
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 10px 30px;
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  list-style: none;
+}

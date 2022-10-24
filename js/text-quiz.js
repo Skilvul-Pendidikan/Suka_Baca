@@ -6,7 +6,7 @@ window.onunload = function () {
   null;
 };
 
-let id = 2;
+let id = localStorage.getItem("id");
 
 let id_literation = localStorage.getItem("id");
 let btn_finish = document.getElementById("btn-finish");
