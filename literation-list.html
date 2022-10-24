@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SukaBaca</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/text-quiz.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <button
+          class="btn btn-transparant"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menu"
+          aria-controls="offcanvasExample"
+        >
+          <h2><i class="bi bi-list primary"></i></h2>
+        </button>
+        <a class="navbar-brand mx-auto text-primary" href="#">Suka<span class="fw-bold">Baca</span></a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row justify-content-between my-2">
+        <div class="col-lg-3">
+          <form class="d-flex" role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="search" />
+            <button class="btn" type="submit" id="btn-search"><i class="bi bi-search"></i></button>
+          </form>
+        </div>
+        <div class="col-lg-2 my-2 d-grid">
+          <button type="button" class="btn" id="btn-join">Join Class</button>
+        </div>
+      </div>
+    </div>
+
+    <section id="class-list" class="mt-5">
+      <div class="container">
+        <!-- Isi kontemu dibawah sini -->
+        <div class="container-fluid py-3 px-3 shadow-sm" style="background-color: #fff; border-radius: 20px">
+          <div class="container bg-primary" style="opacity: 0.5; height: 100px; border-radius: 20px"></div>
+          <div class="text-center h4 mt-4">Ilmu Pengetahuan Alam</div>
+          <p class="text-center">Literas bacaan tengtang alam</p>
+        </div>
+        <div class="container mt-3" id="literation-list"></div>
+      </div>
+    </section>
+
+    <!-- menu bar -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title primary" id="offcanvasExampleLabel">Suka<span class="fw-bold">Baca</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="class-list.html" class="nav-link"
+              ><img src="assets/icon/home.svg" alt="" class="mx-2" /><span class="mx-3">Home</span></a
+            >
+          </li>
+          <li class="list-group-item">
+            <a href="" class="nav-link"
+              ><img src="assets/icon/account.svg" alt="" class="mx-2" /><span class="mx-3">Account</span></a
+            >
+          </li>
+          <li class="list-group-item">
+            <a href="index.html" class="nav-link"
+              ><img src="assets/icon/logout.svg" alt="" class="mx-2" /><span class="mx-3">Logout</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="js/literation.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
